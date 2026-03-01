@@ -28,7 +28,7 @@ export default function App() {
           </Toolbar>
         </AppBar>
 
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4, flex: 1 }}>
+        <Container maxWidth={false} sx={{ mt: 4, mb: 4, flex: 1, display: "flex", flexDirection: "column" }}>
           <UserDataGrid />
         </Container>
       </Box>

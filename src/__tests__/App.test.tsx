@@ -28,7 +28,7 @@ describe("App", () => {
 
   it("renders the app bar with title", async () => {
     render(<App />);
-    expect(screen.getByText("User Management")).toBeInTheDocument();
+    expect(screen.getByText("Управление пользователями")).toBeInTheDocument();
     await waitFor(() => {
       expect(vi.mocked(fetchUsers)).toHaveBeenCalled();
     });
@@ -36,7 +36,7 @@ describe("App", () => {
 
   it("renders the users heading", async () => {
     render(<App />);
-    expect(screen.getByText("Users")).toBeInTheDocument();
+    expect(screen.getByText("Пользователи")).toBeInTheDocument();
     await waitFor(() => {
       expect(vi.mocked(fetchUsers)).toHaveBeenCalled();
     });

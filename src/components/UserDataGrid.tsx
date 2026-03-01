@@ -7,14 +7,14 @@ import type { User } from "../types/User";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 70 },
-  { field: "name", headerName: "Name", flex: 1, minWidth: 150 },
-  { field: "username", headerName: "Username", flex: 1, minWidth: 120 },
+  { field: "name", headerName: "Имя", flex: 1, minWidth: 150 },
+  { field: "username", headerName: "Имя пользователя", flex: 1, minWidth: 120 },
   { field: "email", headerName: "Email", flex: 1, minWidth: 200 },
-  { field: "phone", headerName: "Phone", flex: 1, minWidth: 160 },
-  { field: "website", headerName: "Website", flex: 1, minWidth: 130 },
+  { field: "phone", headerName: "Телефон", flex: 1, minWidth: 160 },
+  { field: "website", headerName: "Веб-сайт", flex: 1, minWidth: 130 },
   {
     field: "company",
-    headerName: "Company",
+    headerName: "Компания",
     flex: 1,
     minWidth: 150,
     valueGetter: (_value: unknown, row: { company?: { name?: string } }) =>
@@ -22,7 +22,7 @@ const columns: GridColDef[] = [
   },
   {
     field: "city",
-    headerName: "City",
+    headerName: "Город",
     flex: 1,
     minWidth: 120,
     valueGetter: (_value: unknown, row: { address?: { city?: string } }) =>
@@ -49,7 +49,7 @@ export default function UserDataGrid() {
     <Box sx={{ width: "100%", flex: 1, display: "flex", flexDirection: "column" }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
         <Typography variant="h6" component="h2">
-          Users
+          Пользователи
         </Typography>
         <Button
           variant="outlined"
@@ -58,7 +58,7 @@ export default function UserDataGrid() {
           disabled={loading}
           size="small"
         >
-          Refresh
+          Обновить
         </Button>
       </Stack>
 
@@ -96,15 +96,15 @@ export default function UserDataGrid() {
         <Card sx={{ mt: 2 }} data-testid="user-detail-panel">
           <CardContent>
             <Typography variant="h6" gutterBottom>
-              User Details
+              Детали пользователя
             </Typography>
-            <Typography><strong>Name:</strong> {selectedUser.name}</Typography>
-            <Typography><strong>Username:</strong> {selectedUser.username}</Typography>
+            <Typography><strong>Имя:</strong> {selectedUser.name}</Typography>
+            <Typography><strong>Имя пользователя:</strong> {selectedUser.username}</Typography>
             <Typography><strong>Email:</strong> {selectedUser.email}</Typography>
-            <Typography><strong>Phone:</strong> {selectedUser.phone}</Typography>
-            <Typography><strong>Website:</strong> {selectedUser.website}</Typography>
-            <Typography><strong>Company:</strong> {selectedUser.company.name}</Typography>
-            <Typography><strong>Address:</strong> {[selectedUser.address.street, selectedUser.address.suite, selectedUser.address.city, selectedUser.address.zipcode].filter(Boolean).join(", ")}</Typography>
+            <Typography><strong>Телефон:</strong> {selectedUser.phone}</Typography>
+            <Typography><strong>Веб-сайт:</strong> {selectedUser.website}</Typography>
+            <Typography><strong>Компания:</strong> {selectedUser.company.name}</Typography>
+            <Typography><strong>Адрес:</strong> {[selectedUser.address.street, selectedUser.address.suite, selectedUser.address.city, selectedUser.address.zipcode].filter(Boolean).join(", ")}</Typography>
           </CardContent>
         </Card>
       )}

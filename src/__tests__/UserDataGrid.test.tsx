@@ -34,6 +34,6 @@ describe("UserDataGrid", () => {
     });
 
     expect(screen.queryByTestId("user-detail-panel")).not.toBeInTheDocument();
-    expect(screen.queryByText("User Details")).not.toBeInTheDocument();
+    expect(screen.queryByText("Детали пользователя")).not.toBeInTheDocument();
   });
 });

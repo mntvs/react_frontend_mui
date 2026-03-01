@@ -88,6 +88,10 @@ export default function UserDataGrid() {
             "& .MuiDataGrid-columnHeaders": {
               backgroundColor: "action.hover",
             },
+            "& .MuiDataGrid-cell:focus, & .MuiDataGrid-cell:focus-within": {
+              outline: "none",
+              boxShadow: (theme) => `inset 0 0 0 2px ${theme.palette.primary.main}`,
+            },
           }}
         />
       </Box>

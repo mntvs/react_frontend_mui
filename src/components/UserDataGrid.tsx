@@ -35,7 +35,7 @@ export default function UserDataGrid() {
   const rows = useMemo(() => users, [users]);
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", flex: 1, display: "flex", flexDirection: "column" }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
         <Typography variant="h6" component="h2">
           Users
@@ -57,7 +57,7 @@ export default function UserDataGrid() {
         </Alert>
       )}
 
-      <Box sx={{ height: 500 }}>
+      <Box sx={{ flex: 1, minHeight: 0 }}>
         <DataGrid
           rows={rows}
           columns={columns}
@@ -66,7 +66,7 @@ export default function UserDataGrid() {
           initialState={{
             pagination: { paginationModel: { pageSize: 10 } },
           }}
-          disableRowSelectionOnClick
+          checkboxSelection
           slots={{
             loadingOverlay: () => <LinearProgress />,
           }}

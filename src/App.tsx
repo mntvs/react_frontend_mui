@@ -1,7 +1,7 @@
 import { AppBar, Box, Container, CssBaseline, Toolbar, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ruRU as coreRuRU } from "@mui/material/locale";
-import { ruRU } from "@mui/x-data-grid";
+import { ruRU } from "@mui/x-data-grid/locales";
 import PeopleIcon from "@mui/icons-material/People";
 import UserDataGrid from "./components/UserDataGrid";
 
